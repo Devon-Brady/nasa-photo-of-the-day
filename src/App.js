@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from './components/header';
 import Img from './components/img';
 import Footer from './components/footer';
+import styled from 'styled-components'
 
 function App() {
   const  [data, setData] = useState([])
@@ -24,8 +25,10 @@ useEffect(() => {
 
 
   return (
-    <div className="App">
+    <StyledBackground>
+    <StyledContainer className="App">
       <Header/>
+      <StyledInfo>
       <Img
       hdImg = {data.hdurl} 
       />
@@ -34,8 +37,26 @@ useEffect(() => {
       info = {data.explanation}
       date ={data.date}
       />
-    </div>
+      </StyledInfo>
+
+    </StyledContainer>
+    </StyledBackground>
   );
 }
+const StyledBackground = styled.div`
+background-color: black;
+padding-bottom: 1%;
+`
+const StyledContainer = styled.div`
+margin: 0 3%;
+background-color: black;
+`
+const StyledInfo = styled.div`
+display:flex;
+text-align: center;
+justify-content: space-around;
+font-family: 'Trispace', sans-serif;
+
+`
 
 export default App;

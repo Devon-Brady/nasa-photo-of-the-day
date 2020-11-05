@@ -1,11 +1,13 @@
 import React, {useState, useEffect}from "react";
-
-function Header(props) {
-
+import styled from 'styled-components'
+export default function Header(props) {
     return (
-    <h1>Nasa's Picture of the Day!</h1>
+    <StyledHeader>Nasa's Picture of the Day!</StyledHeader>
     );
 }
-
-
-export default Header;
+const StyledHeader = styled.h1`
+display: flex;
+font-size: 4rem;
+margin-top: 0;
+color:lightgray;
+`
